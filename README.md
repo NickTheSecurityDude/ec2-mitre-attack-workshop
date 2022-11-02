@@ -1,6 +1,6 @@
 # EC2 Mitre Attack Workshop
 
-In this workshop you will simulate an AWS account breach from start to finish, starting with reconnaissance, ending with impact, and a number of steps in between such as credential access, privilege escalation and exfiltration.
+In this workshop you will simulate an AWS account breach from start to finish, starting with reconnaissance, ending with impact, and 8 steps in between such as credential access, privilege escalation and exfiltration.
 
 To get started you will need:
 - an AWS Account (please use a sandbox account)
@@ -16,7 +16,48 @@ Only change the VPC subnet cidr, if you already have a VPC running with that ran
 
 **Disclaimer this stack creates vulnerable resources as well as resources which incur costs from AWS, terminate when not using**
 
+## Step 1 - Reconnaissance
+
+
+
+## Step 2 - Credential Access
+
+
+
+## Step 3 - Discovery
+
+
+
+## Step 4 - Lateral Movement
+
+
+
+## Step 5 - Privilege Escalation
+
+
+
+## Step 6 - Defense Evation
+
+
+
+## Step 7 - Persistance
+
+
+
+## Step 8 - Collection
+
+
+
+## Step 9 - Exfiltration 
+
+
+
+## Step 10 - Impact
+
+
+
 Cleaning up:
 - Terminate the stack called: ec2-mitre-workshop.
 - Manaually delete any resources causing a rollback and repeat the first step.
 - You will be charged for any resources left behind.
+

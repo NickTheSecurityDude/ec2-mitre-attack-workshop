@@ -4,7 +4,7 @@ In this workshop you will simulate an AWS account breach from start to finish, s
 
 To get started you will need:
 - an AWS Account (please use a sandbox account)
-- your IPv4 source IP
+- your IPv4 source IP (you can find that here: (https://www.whatismyip.com/)
 - a domain (or subdomain provided by the workshop)
 
 Click the button to launch the resources in the us-west-2:

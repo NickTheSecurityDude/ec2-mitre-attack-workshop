@@ -14,6 +14,9 @@ Click the button to launch the resources in the us-west-2:
 You will only need to enter the two required parameters.
 Only change the VPC subnet cidr, if you already have a VPC running with that range.
 
+** Disclaimer this stack creates vulnerable resources as well as resources which incur costs from AWS, terminate when not using **
+
 Cleaning up:
 - Terminate the stack called: ec2-mitre-workshop.
 - Manaually delete any resources causing a rollback and repeat the first step.
+- You will be charged for any resources left behind.

@@ -105,7 +105,7 @@ Pay particular attention to the resources ScoutSuite identitifed as vulnerable.
 
 ## Step 5 - Privilege Escalation
 
-
+Using a tool called Pacu is a good way to escalation your privileges.
 
 ## Step 6 - Defense Evation
 
@@ -120,21 +120,35 @@ The following techniques can be used for Defense Evasion:
 
 ## Step 7 - Persistance
 
+There are multiple ways to keep persistance access to the account, in the event the SSRF vulnerability from Step 2 is fixed.
 
+For example you may want to create a new user or add an additional set of access keys for an existing user.
 
 ## Step 8 - Collection
+
+Now that you have a foothold you can collect data, such as any crown jewel assets or look for sensitive info like access keys.
+
+Common services to target here are S3 and CodeCommit.
 
 
 
 ## Step 9 - Exfiltration 
 
+Now you can exfiltrate data out of this account.  
 
+This may include:
+- Sharing EC2 SnapShots with your account
+- Sharing RDS SnapShots with your account
+- Copying an S3 bucket to a bucket you own
 
 ## Step 10 - Impact
 
+A common way to leave your mark when doing a pen test is by updating the tags of resources.  (Ensure the client is OK with this before preceeding).
 
+For example you can modify the CloudFormation stack to add a name tag, indicating the account was compromised.
 
-Cleaning up:
+## Step 99 - Cleaning up
+
 - Terminate the stack called: ec2-mitre-workshop.
 - Manaually delete any resources causing a rollback and repeat the first step.
 - You will be charged for any resources left behind.

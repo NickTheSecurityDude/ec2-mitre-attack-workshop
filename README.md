@@ -40,7 +40,26 @@ gobuster dir -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/C
 
 ## Step 2 - Credential Access
 
+Now go to the pages that it found.
 
+On report.php we see we're able able to bypass authentication to access it:
+http://finance.pentestingdemo.com/reports.php
+
+Now, click on the first link:
+http://finance.pentestingdemo.com/view_report.php?url=https://security-ace-public-files.s3.us-west-2.amazonaws.com/sa-lab/financials/xyz_corp_2022_Q3.csv
+
+This takes us to a new page, not found by the enumerator: view_report.php.  Also notice that it has a variable: url
+
+Try replacing that URL with the meta data URL.
+
+Its blocked:
+
+Take a look at this page for other options:
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Request%20Forgery/README.md#ssrf-url-for-cloud-instances
+
+We see if we use instance-data, its not blocked:
+
+Now try to get the temporary credentials:
 
 
 ## Step 3 - Discovery

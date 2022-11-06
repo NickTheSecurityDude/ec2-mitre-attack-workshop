@@ -130,6 +130,12 @@ Now that you have a foothold you can collect data, such as any crown jewel asset
 
 Common services to target here are S3 and CodeCommit.
 
+A good tool to use for this is TruffleHog, this is particually useful on git/codecommit repos because it can quickly check all branches.
+
+```
+trufflehog git https://github.com/NickTheSecurityDude/code-commit-test-repo.git |grep -E "Detector|File"
+```
+
 
 
 ## Step 9 - Exfiltration 

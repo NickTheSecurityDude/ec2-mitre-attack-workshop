@@ -98,6 +98,7 @@ http://your-tools-ip:8000
 
 ## Step 4 - Lateral Movement
 
+Now with the data from Scout Suite and Cloud Mapper try to move laterally within the AWS account.
 
 
 ## Step 5 - Privilege Escalation

@@ -16,6 +16,15 @@ Only change the VPC subnet cidr, if you already have a VPC running with that ran
 
 **Disclaimer this stack creates vulnerable resources as well as resources which incur costs from AWS, terminate when not using**
 
+## Step 0 - Point the Domain
+
+View the hosted zone in Route 53 and look for the ns record.
+
+View the domain in Registered Domains and Edit the Name Server to match what was in the hosted zone.
+
+Wait at least 15 minutes for the nameservers to propagate (this may take up to 24 hours).
+
+
 ## Step 1 - Reconnaissance
 
 

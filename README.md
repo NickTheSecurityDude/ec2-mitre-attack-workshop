@@ -84,6 +84,17 @@ cd pentesting-tools/cloudmapper/
 nano config.json
 ```
 
+Then run cloudmapper:
+```
+python3 -m venv ./venv && source venv/bin/activate
+python cloudmapper.py collect --account securityace 
+python3 cloudmapper.py report --account securityace
+python3 cloudmapper.py prepare --account securityace
+python3 cloudmapper.py webserver --public
+```
+
+The last command starts a webserver on port 8000 so you can view the Cloud Mapper results:
+http://your-tools-ip:8000
 
 ## Step 4 - Lateral Movement
 

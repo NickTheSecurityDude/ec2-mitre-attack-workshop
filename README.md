@@ -27,9 +27,19 @@ Wait at least 15 minutes for the nameservers to propagate (this may take up to 2
 
 ## Step 1 - Reconnaissance
 
+Enumerate the domain to find common DNS records.
+```
+gobuster dns -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-small.txt  -d pentestingdemo.com
+````
+
+Now with the domains it found, enumerate those for common files:
+```
+gobuster dir -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/Common-PHP-Filenames.txt  -u http://finance.pentestingdemo.com
+```
 
 
 ## Step 2 - Credential Access
+
 
 
 

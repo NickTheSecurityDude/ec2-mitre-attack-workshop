@@ -109,7 +109,14 @@ Pay particular attention to the resources ScoutSuite identitifed as vulnerable.
 
 ## Step 6 - Defense Evation
 
-
+The following techniques can be used for Defense Evasion:
+- Delete CloudWatch Log Group
+- Delete CloudTrail
+- Stop CloudTrail Logging
+- Tamper with CloudTrail settings
+- Tamper with Security Services, ex. AWS Config, SecurityHub, etc.
+- Delete Logs from S3
+- PutBucketLifeCycle with short expiration on logs
 
 ## Step 7 - Persistance
 

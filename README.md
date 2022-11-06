@@ -64,6 +64,25 @@ Now try to get the temporary credentials:
 
 ## Step 3 - Discovery
 
+Now that we have credentials, lets see what else we can find in the account.
+
+First enumerate the account with ScoutSuite:
+```
+virtualenv -p python3 venv
+source venv/bin/activate
+scout aws --max-workers 3
+```
+
+Now view the report:
+python3 -m http.server 8001
+
+One more tool we can use for enumerating is CloudMapper.
+
+Edit the config file:
+```
+cd pentesting-tools/cloudmapper/
+nano config.json
+```
 
 
 ## Step 4 - Lateral Movement

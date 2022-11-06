@@ -100,6 +100,8 @@ http://your-tools-ip:8000
 
 Now with the data from Scout Suite and Cloud Mapper try to move laterally within the AWS account.
 
+Pay particular attention to the resources ScoutSuite identitifed as vulnerable.
+
 
 ## Step 5 - Privilege Escalation
 

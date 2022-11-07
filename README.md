@@ -36,7 +36,8 @@ Enumerate the domain to find common DNS records.
 gobuster dns -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-small.txt  -d pentestingdemo.com
 ````
 
-![Search DNS](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-1-1.png)
+![Modify Nameservers](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-1.png)
+
 
 Now with the domains it found, enumerate those for common files:
 ```

@@ -44,7 +44,7 @@ Now with the domains it found, enumerate those for common files:
 gobuster dir -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/Common-PHP-Filenames.txt  -u http://finance.pentestingdemo.com
 ```
 
-![Search Subdomain](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-1-2.png)
+![Search Domain](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-1-2.png)
 
 ## Step 2 - Credential Access
 

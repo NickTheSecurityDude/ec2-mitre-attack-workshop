@@ -44,13 +44,13 @@ Now with the domains it found, enumerate those for common files:
 gobuster dir -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/Common-PHP-Filenames.txt  -u http://finance.pentestingdemo.com
 ```
 
-![Search Domain](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-1-2.png)
+![Search Domain](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-2.png)
 
 ## Step 2 - Credential Access
 
 Now go to the pages that it found.
 
-![Check Link](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-2-1.png)
+![Check Link](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-1.png)
 
 On report.php we see we're able able to bypass authentication to access it:
 http://finance.pentestingdemo.com/reports.php
@@ -62,23 +62,23 @@ http://finance.pentestingdemo.com/view_report.php?url=https://security-ace-publi
 
 This takes us to a new page, not found by the enumerator: view_report.php.  Also notice that it has a variable: 
 
-![Note Query Param](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-2-2.png)
+![Note Query Param](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-2.png)
 
 Try replacing that URL with the meta data URL.
 
 Its blocked:
-![Blocked](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-2-3.png)
+![Blocked](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-3.png)
 
 Take a look at this page for other options:
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Request%20Forgery/README.md#ssrf-url-for-cloud-instances
 
 We see if we use instance-data, its not blocked:
 
-![Meta Data](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-2-4.png)
+![Meta Data](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-4.png)
 
 Now try to get the temporary credentials:
 
-![Note Query Param](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-2-5.png)
+![Note Query Param](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-5.png)
 
 ## Step 3 - Discovery
 
@@ -158,7 +158,7 @@ A good tool to use for this is TruffleHog, this is particually useful on git/cod
 trufflehog git https://github.com/NickTheSecurityDude/code-commit-test-repo.git |grep -E "Detector|File"
 ```
 
-![Trufflehog](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-8-1.png)
+![Trufflehog](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step8-1.png)
 
 ## Step 9 - Exfiltration 
 
@@ -175,11 +175,11 @@ A common way to leave your mark when doing a pen test is by updating the tags of
 
 For example you can modify the CloudFormation stack to add a name tag, indicating the account was compromised.
 
-![Impact](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-10-1.png)
+![Impact](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-1.png)
 
 And when you view resources in the console you will see your mark.
 
-![Your Mark](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-10-2.png)
+![Your Mark](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-2.png)
 
 ## Step 99 - Cleaning up
 

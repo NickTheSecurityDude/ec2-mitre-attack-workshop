@@ -20,11 +20,11 @@ Only change the VPC subnet cidr, if you already have a VPC running with that ran
 
 View the hosted zone in Route 53 and look for the ns record.
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-1.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-1.png" width="800">
   
 View the domain in Registered Domains and Edit the Name Server to match what was in the hosted zone.
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-2.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-2.png" width="800">
 
 Wait at least 15 minutes for the nameservers to propagate (this may take up to 24 hours).
 

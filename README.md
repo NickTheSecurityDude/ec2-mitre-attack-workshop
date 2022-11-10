@@ -55,8 +55,6 @@ Now go to the pages that it found.
 On report.php we see we're able able to bypass authentication to access it:
 http://finance.pentestingdemo.com/reports.php
 
-
-
 Now, click on the first link:
 http://finance.pentestingdemo.com/view_report.php?url=https://security-ace-public-files.s3.us-west-2.amazonaws.com/sa-lab/financials/xyz_corp_2022_Q3.csv
 
@@ -129,24 +127,43 @@ Pay particular attention to the resources ScoutSuite identitifed as vulnerable.
 
 Using a tool called Pacu can be good way to escalation your privileges.
 
+Pacu can be installed as so:
+```
+mkdir pacu && cd pacu
+python3 -m venv venv && source venv/bin/activate
+python3 -m pip install --upgrade pip
+Pip3 install pacu
+```
+
+To run it, first set the keys:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-1.png" width="800">
 
+Then you can enumerate IAM resources:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-2.png" width="800">
 
+And then try to have it automatically escalat your privilege:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-3.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-4.png" width="800">
+In addition to Pacu, you should also try to manually escalate your privilege.
 
+Starting as the web server user:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5.png" width="800">
 
+You can list all roles that have allow "root" in the local account to assume it:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5b.png" width="800">
 
+View the details of the account like so:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-6.png" width="800">
 
+Then you can check the attached and inline policies attached to that account:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-7.png" width="800">
 
+Since any local account (with sts:AssumeRole permissions) can assume it, switch to that user:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-8.png" width="800">
 
+Try a priviledged command or two, notice create-user was blocked by create-role, as well as attach-role works:
+
+Now, try create-user again, this time it works:
 <img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-9.png" width="800">
 
 ## Step 6 - Defense Evation

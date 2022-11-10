@@ -20,8 +20,10 @@ Only change the VPC subnet cidr, if you already have a VPC running with that ran
 
 View the hosted zone in Route 53 and look for the ns record.
 
+<div style="width: 60%; height: 60%">
 ![NS Record](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-1.png | width=100)
-
+</div>
+  
 View the domain in Registered Domains and Edit the Name Server to match what was in the hosted zone.
 
 ![Modify Nameservers](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-2.png)

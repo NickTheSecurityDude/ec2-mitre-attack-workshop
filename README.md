@@ -44,7 +44,7 @@ Now with the domains it found, enumerate those for common files:
 gobuster dir -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/Common-PHP-Filenames.txt  -u http://finance.pentestingdemo.com
 ```
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-2.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-2.png" width="800">
 
 ## Step 2 - Credential Access
 
@@ -62,23 +62,23 @@ http://finance.pentestingdemo.com/view_report.php?url=https://security-ace-publi
 
 This takes us to a new page, not found by the enumerator: view_report.php.  Also notice that it has a variable: 
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-2.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-2.png" width="800">
 
 Try replacing that URL with the meta data URL.
 
 Its blocked:
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-3.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-3.png" width="800">
 
 Take a look at this page for other options:
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Request%20Forgery/README.md#ssrf-url-for-cloud-instances
 
 We see if we use instance-data, its not blocked:
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-4.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-4.png" width="800">
 
 Now try to get the temporary credentials:
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-5.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-5.png" width="800">
 
 ## Step 3 - Discovery
 
@@ -116,7 +116,7 @@ python3 cloudmapper.py webserver --public
 The last command starts a webserver on port 8000 so you can view the Cloud Mapper results:
 http://your-tools-ip:8000
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-cloudmapper-2.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-cloudmapper-2.png" width="800">
 
 ## Step 4 - Lateral Movement
 
@@ -129,25 +129,25 @@ Pay particular attention to the resources ScoutSuite identitifed as vulnerable.
 
 Using a tool called Pacu can be good way to escalation your privileges.
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-1.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-1.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-2.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-2.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-3.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-3.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-4.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-4.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5b.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5b.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-6.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-6.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-7.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-7.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-8.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-8.png" width="800">
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-9.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-9.png" width="800">
 
 ## Step 6 - Defense Evation
 
@@ -178,7 +178,7 @@ A good tool to use for this is TruffleHog, this is particually useful on git/cod
 trufflehog git https://github.com/NickTheSecurityDude/code-commit-test-repo.git |grep -E "Detector|File"
 ```
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step8-1.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step8-1.png" width="800">
 
 ## Step 9 - Exfiltration 
 
@@ -195,7 +195,7 @@ A common way to leave your mark when doing a pen test is by updating the tags of
 
 For example you can modify the CloudFormation stack to add a name tag, indicating the account was compromised.
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-1.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-1.png" width="800">
 
 And when you view resources in the console you will see your mark.
 

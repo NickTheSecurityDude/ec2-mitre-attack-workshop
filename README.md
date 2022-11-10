@@ -9,7 +9,7 @@ To get started you will need:
 
 Click the button to launch the resources in the us-west-2:
 
-[![CloudFormation Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch Workshop Stack")](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ec2-mitre-workshop&templateURL=https://security-ace-public-files.s3.us-west-2.amazonaws.com/templates/sa-lab-ROOT.yaml) 
+[![CloudFormation Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch Workshop Stack")](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ec2-mitre-workshop&templateURL=https://security-ace-public-files.s3.us-west-2.amazonaws.com/templates/sa-lab-ROOT.yaml =250x) 
 
 You will only need to enter the two required parameters.
 Only change the VPC subnet cidr, if you already have a VPC running with that range.

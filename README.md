@@ -127,7 +127,27 @@ Pay particular attention to the resources ScoutSuite identitifed as vulnerable.
 
 ## Step 5 - Privilege Escalation
 
-Using a tool called Pacu is a good way to escalation your privileges.
+Using a tool called Pacu can be good way to escalation your privileges.
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-1.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-2.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-3.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-4.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5b.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-6.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-7.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-8.png)
+
+![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-9.png)
 
 ## Step 6 - Defense Evation
 

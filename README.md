@@ -93,7 +93,7 @@ Now view the report, start a python web server, then visit the url in your brows
 ```
 python3 -m http.server 8001
 ```
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-scout-1.png" width="600">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-scout-1.png" width="800">
 
 The url will be the public IP of your server followed by :8001:
 

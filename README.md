@@ -89,8 +89,23 @@ source venv/bin/activate
 scout aws --max-workers 3
 ```
 
-Now view the report:
+Now view the report, start a python web server, then visit the url in your browser:
+```
 python3 -m http.server 8001
+```
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-scout-1.png" width="600">
+
+The url will be the public IP of your server followed by :8001:
+
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-scout-2.png" width="800">
+
+From there you can drill down into the different services:
+
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-scout-3.png" width="800">
+
+And even drill down further to view specific details of items marked as dangerous:
+
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-scout-4.png" width="800">
 
 One more tool we can use for enumerating is CloudMapper.
 

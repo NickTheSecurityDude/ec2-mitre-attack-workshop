@@ -20,11 +20,11 @@ Only change the VPC subnet cidr, if you already have a VPC running with that ran
 
 View the hosted zone in Route 53 and look for the ns record.
 
-<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-1.png" width="200">
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-1.png" width="600">
   
 View the domain in Registered Domains and Edit the Name Server to match what was in the hosted zone.
 
-![Modify Nameservers](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-2.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step-0-2.png" width="600">
 
 Wait at least 15 minutes for the nameservers to propagate (this may take up to 24 hours).
 
@@ -36,7 +36,7 @@ Enumerate the domain to find common DNS records.
 gobuster dns -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/directory-list-lowercase-2.3-small.txt  -d pentestingdemo.com
 ````
 
-![Search DNS](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-1.png)
+![Search DNS](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-1.png" width="600">
 
 
 Now with the domains it found, enumerate those for common files:
@@ -44,13 +44,13 @@ Now with the domains it found, enumerate those for common files:
 gobuster dir -w /home/ec2-user/pentesting-tools/SecLists/Discovery/Web-Content/Common-PHP-Filenames.txt  -u http://finance.pentestingdemo.com
 ```
 
-![Search Domain](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-2.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step1-2.png" width="600">
 
 ## Step 2 - Credential Access
 
 Now go to the pages that it found.
 
-![Check Link](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-1.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-1.png" width="600">
 
 On report.php we see we're able able to bypass authentication to access it:
 http://finance.pentestingdemo.com/reports.php
@@ -62,23 +62,23 @@ http://finance.pentestingdemo.com/view_report.php?url=https://security-ace-publi
 
 This takes us to a new page, not found by the enumerator: view_report.php.  Also notice that it has a variable: 
 
-![Note Query Param](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-2.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-2.png" width="600">
 
 Try replacing that URL with the meta data URL.
 
 Its blocked:
-![Blocked](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-3.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-3.png" width="600">
 
 Take a look at this page for other options:
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Request%20Forgery/README.md#ssrf-url-for-cloud-instances
 
 We see if we use instance-data, its not blocked:
 
-![Meta Data](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-4.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-4.png" width="600">
 
 Now try to get the temporary credentials:
 
-![Note Query Param](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-5.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step2-5.png" width="600">
 
 ## Step 3 - Discovery
 
@@ -102,7 +102,7 @@ cd pentesting-tools/cloudmapper/
 nano config.json
 ```
 
-![Cloud Mapper Config](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-cloudmapper-1.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-cloudmapper-1.png" width="600">
 
 Then run cloudmapper:
 ```
@@ -116,7 +116,7 @@ python3 cloudmapper.py webserver --public
 The last command starts a webserver on port 8000 so you can view the Cloud Mapper results:
 http://your-tools-ip:8000
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-cloudmapper-2.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step3-cloudmapper-2.png" width="600">
 
 ## Step 4 - Lateral Movement
 
@@ -129,25 +129,25 @@ Pay particular attention to the resources ScoutSuite identitifed as vulnerable.
 
 Using a tool called Pacu can be good way to escalation your privileges.
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-1.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-1.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-2.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-2.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-3.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-3.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-4.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-4.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5b.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-5b.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-6.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-6.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-7.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-7.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-8.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-8.png" width="600">
 
-![Cloud Mapper Map](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-9.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step5-9.png" width="600">
 
 ## Step 6 - Defense Evation
 
@@ -178,7 +178,7 @@ A good tool to use for this is TruffleHog, this is particually useful on git/cod
 trufflehog git https://github.com/NickTheSecurityDude/code-commit-test-repo.git |grep -E "Detector|File"
 ```
 
-![Trufflehog](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step8-1.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step8-1.png" width="600">
 
 ## Step 9 - Exfiltration 
 
@@ -195,11 +195,11 @@ A common way to leave your mark when doing a pen test is by updating the tags of
 
 For example you can modify the CloudFormation stack to add a name tag, indicating the account was compromised.
 
-![Impact](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-1.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-1.png" width="600">
 
 And when you view resources in the console you will see your mark.
 
-![Your Mark](https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-2.png)
+<img src="https://security-ace-public-files.s3.us-west-2.amazonaws.com/workshop-images/step10-2.png" width="600">
 
 ## Step 99 - Cleaning up
 

@@ -147,7 +147,7 @@ Pacu can be installed as so:
 mkdir pacu && cd pacu
 python3 -m venv venv && source venv/bin/activate
 python3 -m pip install --upgrade pip
-Pip3 install pacu
+pip3 install pacu
 ```
 
 To run it, first set the keys:
